@@ -11,7 +11,8 @@ Od prvého momentu bolo jasné, že sa zaoberáme problémom obchodného cestuj�
 ### DFS a rekurzívny backtracking
 Najprv jednoduchý DFS (depth first search alebo prehľadávanie do hĺbky) vygeneruje jednu cestu a potom skúša upravovať koniec cesty. Jeho najjednoduchšou variantou je rekurzívny backtracking. Tento postup je vhodné použiť ak chcem získať všetky cesty, alebo ak chcem získať akékoľvek (aj nie optimálne riešenie).
 
-![DFS](images/sa.gif)
+![DFS](images/dfs.gif)
+Ak sa gif nezobrazí, [klikni sem](images/dfs.gif)
 
 Ak už nie je možné pokračovať v budovaní cesty, jednoducho zahodím poslednú stanicu a nahradím ju novou. Veľmi jednoduchý pseudokód:
 
@@ -98,6 +99,7 @@ S teplotou, alfou (cooldown rate) a poctom iteracii som sa chvilku hral, aby rie
 Simulovaným žíhaním som si nechal vygenerovať asi 100-150 riešení. Medzi nimi sa našlo niekoľko riešení, cez 2.700.000.
 
 ![Simulated Annealing](images/sa.gif)
+Ak sa gif nezobrazí, [klikni sem](images/sa.gif)
 
 Takto vyzerá animovaný priebeh simulovaného žíhania.
 
