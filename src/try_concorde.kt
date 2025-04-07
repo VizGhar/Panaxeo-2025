@@ -14,9 +14,7 @@ import java.io.File
  * 3. Run concorde on new set of cities
  * 4. Catch better results
  *
- * This one brought me 2nd place together with somebody that found this solution faster
- *
- * TODO: replace tuples of cities
+ * This one brought me 1st place together with somebody that found this solution faster
  */
 fun main() {
     val includedCities = concordeBestPath

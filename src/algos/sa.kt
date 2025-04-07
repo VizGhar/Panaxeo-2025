@@ -11,7 +11,7 @@ import java.io.File
 import kotlin.math.exp
 import kotlin.random.Random
 
-private data class SaPath(val path: List<Int>) {
+data class SaPath(val path: List<Int>) {
     val score: Int
     val traveledCities: Int
     val traveledDistance: Int
@@ -49,9 +49,6 @@ private data class SaPath(val path: List<Int>) {
             val result = path.take(traveledCities) + base.index
             bestScoreSoFar = score
             currentDistance = traveledDistance
-            println(score)
-            println(result.joinToString(","){cities[it].name})
-
             setPathUI(result)
         }
     }
@@ -79,31 +76,25 @@ private fun initial(blackList: List<Int> = listOf(
 
 
 fun sa() {
-    repeat(200) {
+    repeat(1) {
         bestScoreSoFar = -1
         bestPathSoFar = null
         currentDistance = -1
         var actual = initial()
-        var best = mutableListOf(actual)
-
+        var best = actual
         var initialTemp = 10000000.0
         val alpha = 0.999999999
         var t = initialTemp
         for (i in 10000000000 downTo 0) {
             val susedneRiesenie = actual.getRandomNeighbor()
             if (akceptacnaFunkcia(actual, susedneRiesenie, t)) { actual = susedneRiesenie }
-            if (best.size < 10 || actual.score > best[0].score) {
-                best += actual
-                best.sortBy { it.score }
-                if (best.size > 10) {
-                    best.removeAt(0)
-                }
+            if (actual.score > best.score) {
+                best = actual
+                println(best.validPath.joinToString(","))
             }
             t *= alpha
         }
-        for (b in best) {
-            File("out.txt").appendText("${b.score} - ${b.validPath.joinToString(",")}\n")
-        }
+        File("out.txt").appendText("${best.score} - ${best.validPath.joinToString(",")}\n")
     }
 }
 

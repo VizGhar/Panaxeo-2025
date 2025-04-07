@@ -1,5 +1,7 @@
 import algos.manual
+import algos.sa
 import core.Path
+import trash.demo
 import kotlin.time.measureTime
 
 var currentDistance = -1
@@ -11,6 +13,5 @@ fun main() {
     val time = measureTime {
         manual()
     }
-
     println("Finished in $time")
 }

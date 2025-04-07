@@ -1,6 +1,8 @@
 package algos
 
+import bestScoreSoFar
 import core.Path
+import setPathUI
 import java.io.File
 
 /**
@@ -8,6 +10,8 @@ import java.io.File
  */
 fun manual() {
     println(bestPath)
+    setPathUI(bestPath.path)
+    bestScoreSoFar = 2763991
 }
 
 private val bestPath by lazy {
@@ -20,5 +24,5 @@ private val bestPath by lazy {
             }
             r
         }
-        .maxBy { it.score }
+        .first { it.score == 2763991 }
 }

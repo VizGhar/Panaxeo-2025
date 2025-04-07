@@ -6,6 +6,9 @@ import core.cities
 import core.distanceMatrix
 import kotlin.math.pow
 
+/**
+ * Unsuccessful try for ACO algorithm with ChatGPT
+ */
 private val alpha = 1.0  // Vplyv feromónov
 private val beta = 5.0   // Vplyv heuristiky (1/distance)
 private val rho = 0.2    // Miera odparovania

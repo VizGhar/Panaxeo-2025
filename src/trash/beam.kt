@@ -1,6 +1,5 @@
 package trash
 
-import beamSize
 import core.Path
 import core.cities
 import core.distanceMatrix
@@ -16,7 +15,7 @@ fun beam() {
                 .map { solve.cp().apply { addCity(it.index) } }
             nextLayer.addAll(candidates)
         }
-        a = nextLayer.take(beamSize)
+        a = nextLayer.take(10000)
     }
     System.err.println("DONE")
 }
